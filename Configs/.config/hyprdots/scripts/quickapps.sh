@@ -62,6 +62,8 @@ r_override="window{height:${dockHeight};width:${dockWidth};border-radius:${wind_
 
 if [ -d /run/current-system/sw/share/applications ]; then
     appDir=/run/current-system/sw/share/applications
+elif [ -d /run/current-system/profile/share/applications ]; then
+    appDir=/run/current-system/profile/share/applications
 else
     appDir=/usr/share/applications
 fi
