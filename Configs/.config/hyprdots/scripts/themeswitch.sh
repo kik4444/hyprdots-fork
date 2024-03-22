@@ -94,8 +94,8 @@ sed -i "/^gtk-icon-theme-name=/c\gtk-icon-theme-name=${gtkIcon}" $ConfDir/gtk-3.
 
 # gtk4
 
-if [ -d /run/current-system/sw/share/themes ]; then
-    themeDir=/run/current-system/sw/share/themes
+if [ -d /run/current-system/sw/share/themes || -d /run/current-system/profile/share/themes ]; then
+    themeDir=/run/current-system/*/share/themes
 else
     themeDir=/usr/share/themes
 fi
