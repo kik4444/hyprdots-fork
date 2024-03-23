@@ -18,8 +18,8 @@ do
     tgt=`echo $lst | awk -F '|' '{print $2}'`
     tgt=`eval "echo $tgt"`
 
-    if [[ "${tgt}" =~ /usr/share/ && -d /run/current-system/sw/share/ ]]; then
-        echo -e "\e[38;5;4m[skipping]\e[0m ${tgt} on NixOS"
+    if [[ "${tgt}" =~ /usr/share/ && -d /run/current-system/sw/share/ || "${tgt}" =~ /usr/share/ && -d /run/current-system/profile/share/ ]]; then
+        echo -e "\e[38;5;4m[skipping]\e[0m ${tgt} on stateless OSes"
         continue
     fi
 
